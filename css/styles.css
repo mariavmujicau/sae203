@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+@font-face {
+    font-family: 'saonara';
+    src: url(MADE\ SAONARA\ PERSONAL\ USE.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    padding: 2vh;
+}
+
+body {}
+
+#contenus img {}
+
+#contenus {}
+
+.carre {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2vw;
+}
+
+.carredesc {
+    margin-bottom: 5vh;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+#baniere {
+    position: relative;
+    background: url(../images/baniere.jpg);
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+}
+
+#banierecontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
+    width: 100%;
+    background-color: rgb(13, 13, 14);
+    color: white;
+    font-size: 8vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+#bandesc {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.navbar-brand {
+    font-family: 'saonara';
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-link {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+#baniere button {
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    top: 60%;
+    left: 65%;
+    background-color: white;
+    color: black;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 5vw;
+}
+
+#rechercher {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#rechercher label {
+
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    height: 2.25rem;
+    font-size: 7vw;
+    margin: 10px;
+    font-weight: bolder;
+
+}
+
+#recherche {
+    background-color: #d8d8d83b;
+    border: none;
+    font-size: 7vw;
+    font-size: 15px;
+    padding: 5px;
+    width: 70%;
+
+
+}
+
+#envoyer {
+    background-color: rgb(66 66 66 / 58%);
+    color: white;
+    border: none;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#formulaire {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 460px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#reponse {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+@media all and (min-width:480px) {
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: center;
+    }
+
+    #banierecontent {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 70vh;
+        background-color: rgb(13, 13, 14);
+        position: relative;
+    }
+
+    #baniere {
+        height: 70vh;
+        width: 100%;
+        background-image: url(../images/baniere2.jpg);
+        background-size: cover;
+    }
+
+    #baniere button {
+        top: 80%;
+        left: 40vw;
+        font-size: 2vw;
+    }
+
+    #bandesc {
+        font-size: 4vw;
+    }
+
+    #contenus {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+
+    }
+
+    #contenus img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .carre {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .carredesc {
+        margin-bottom: 0;
+    }
+
+    #recherche {
+        background-color: #d8d8d83b;
+        border: none;
+        font-size: 7vw;
+        font-size: 15px;
+        padding: 5px;
+        width: 70%;
+
+
+    }
+}
+
+@media all and (min-width:960px) {
+    #contenus {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 8fr;
+
+    }
+}
