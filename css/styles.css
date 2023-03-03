@@ -161,6 +161,10 @@ footer {
     margin-bottom: 50px;
 }
 
+.active {
+    color: greenyellow;
+}
+
 @media all and (min-width:480px) {
     .navbar-expand-lg .navbar-nav {
         flex-direction: row;
