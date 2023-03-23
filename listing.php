@@ -12,7 +12,7 @@
 <?php
 require ('header.php');
 ?>
-<body>
+<!-- <body>
     <div id="contenus">
         <div class="carre">
         <img src="images/chanel.jpg" alt="chanel">
@@ -47,10 +47,44 @@ require ('header.php');
            <p><br> </p> 
         </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
+    </div> -->
+    
+
 <?php
-require ('footer.php');
+// $designernom = $_GET['texte'];
+// $designerprenom = $_GET['texte'];
+// $designerdn = $_GET['texte'];
+// $designernationalite = $_GET['texte'];
+// $ = $_GET['texte'];
+$mabd = new PDO('mysql:host=localhost;dbname=sae203Base;charset=UTF8;', 'sae203User', 'Jm123312____');
+$mabd->query('SET NAMES utf8;');
+$req = "SELECT * FROM articles_luxe
+            INNER JOIN designers_luxe 
+            ON articles_luxe._designer_id = designers_luxe.designer_id";
+        
+$resultat = $mabd->query($req);
+
+foreach ($resultat as $value) {
+    echo '<div id="contenus">';
+    echo '<div class="carre">';
+    echo '<img class="images" src="images/uploads/'.$value['article_photo'].'">';
+    echo '<div class="carredesc">';
+    echo '<h3>'.$value['article_nom'] . '</h3>';
+    echo '<p>' . $value['article_marque'] . ' </p>';
+    echo '<p>' . $value['article_prix'] . '€ </p>';
+     echo '<p>By: ' . $value['designer_prenom'] .' ' .$value['designer_nom'] .
+     ' - ' . $value['designer_nationalite'] .
+     ' - '. $value['designer_date_naissance'] . '</p>';
+    echo '<p class="type">' . $value['article_type'] . ' '. $value['article_desc'].'</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+}
 ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <?php
+    require ('footer.php');
+    ?>
+    </body>
+
 </html>

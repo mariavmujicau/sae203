@@ -19,6 +19,9 @@ $page =$_SERVER['PHP_SELF'];
         <li <?php if(strpos($page,"form_recherche.php")) echo'class="active"'; ?>>
           <a href="form_recherche.php">Formulaire</a>
         </li>
+        <li <?php if(strpos($page,"admin/admin.php")) echo'class="active"'; ?>>
+          <a  href="admin/admin.php">Admin</a>
+        </li>
           <!-- <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>

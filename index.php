@@ -14,7 +14,7 @@ require ('header.php');
 <body>
     <div id="banierecontent">
     <div id="baniere">
-    <button>Articles</button>
+    <a href="listing.php"><button>Articles</button></a>
     </div>
     <p id="bandesc">Articles des marques les plus iconiques dans l'industrie de la mode !...</p>
     </div>
