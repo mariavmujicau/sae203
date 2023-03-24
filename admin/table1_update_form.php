@@ -28,7 +28,7 @@ echo $article['article_prix'];
     prix:<input type="text" name="prix" value="<?php echo $article['article_prix']?>"><br>
     type:<input type="text" name="type" value="<?php echo $article['article_type']?>"><br>
     Description:<input type="text" name="desc" value="<?php echo $article['article_desc']?>"><br>
-    Photo : <input type="file" name="photo" required/ ><br/><?php echo $article['article_photo']?>"><br>
+    Photo : <input type="file" name="photo"><br/><?php echo $article['article_photo']?>"><br>
     Designer:
     <select name="numdesigner">
     	<?php

@@ -28,6 +28,7 @@ if($imageName!=""){
 			$imageType=$_FILES["photo"]["type"];
 	        if ( ($imageType != "image/png") &&
 	            ($imageType != "image/jpg") &&
+				($imageType != "image/webp") &&
 	            ($imageType != "image/jpeg") ) {
 	                echo '<p>Désolé, le type d\'image n\'est pas reconnu !';
 	                echo 'Seuls les formats PNG et JPEG sont autorisés.</p>'."\n";
@@ -53,11 +54,15 @@ if($imageName!=""){
     
 
 
-$req = 'UPDATE articles_luxe SET article_nom="'. $nom . '", article_prix=' . $prix . ', article_type="' 
-. $type.'", article_desc="'.$desc.'" , article_photo="'.$nouvelleImage.'", _designer_id='.$numdesigner.'
-        WHERE article_id=' . $num;
+$req = 'UPDATE articles_luxe SET article_nom="'. $nom . '", article_prix='. $prix .', article_type="' 
+.$type.'", article_desc="'.$desc.'" , article_photo="'.$nouvelleImage.'", _designer_id='.$numdesigner.'
+        WHERE article_id='. $num.'';
 }
-
+else{
+	$req = 'UPDATE articles_luxe SET article_nom="'. $nom . '", article_prix='. $prix .', article_type="' 
+	.$type.'", article_desc="'.$desc.'", _designer_id='.$numdesigner.'
+			WHERE article_id='. $num.'';
+}
 //echo 'juste pour le debug: '. $req;
 
 // Décommenter une fois la simulation fait

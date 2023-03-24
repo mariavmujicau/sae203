@@ -25,14 +25,17 @@ nav a {
 
 body {}
 
-#contenus img {}
+#contenus img {
+    width: 300px;
+}
 
-#contenus {}
-
-.carre {
+#contenus {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+}
+
+.carre {
+
     text-align: center;
     padding: 2vw;
 }
@@ -150,6 +153,7 @@ footer {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 30%;
 }
 
 #reponse {
@@ -221,10 +225,15 @@ footer {
         font-size: 4vw;
     }
 
-    #contenus {
+    body {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 2fr;
+    }
+
+    .boite {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: (1fr);
+
 
     }
 
@@ -256,10 +265,15 @@ footer {
 }
 
 @media all and (min-width:960px) {
-    #contenus {
+    .boite {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 8fr;
+        grid-template-rows: (1, 2fr);
 
+
+    }
+
+    #formulaire {
+        margin-top: 15%;
     }
 }

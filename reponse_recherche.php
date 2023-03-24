@@ -25,21 +25,26 @@ require ('header.php');
    $mabd->query('SET NAMES utf8;');
    $req = "SELECT * FROM articles_luxe
                INNER JOIN designers_luxe 
-               ON articles_luxe._designer_id = designers_luxe.designer_id";
+               ON articles_luxe._designer_id = designers_luxe.designer_id
+               WHERE article_nom LIKE '%".$recherche_nettoye."%'" ;
            
    $resultat = $mabd->query($req);
    
    foreach ($resultat as $value) {
-       echo '<img class="images" src="images/uploads/'.$value['article_photo'].'">';
-       echo '<h3>'.$value['article_nom'] . '</h3>';
-       echo '<p>' . $value['article_marque'] . ' </p>';
-       echo '<p>' . $value['article_prix'] . '€ </p>';
-        echo '<p>By:' . $value['designer_prenom'] , $value['designer_nom'] .
-        '-' . $value['designer_nationalite'] .
-        '-'. $value['designer_date_naissance'] . '</p>';
-       echo '<p class="type">' . $value['article_type'] . '</p>';
-       echo '<p class="desc">' . $value['article_desc'] . '</p>';
-       echo '<hr>';
+    echo '<div id="contenus">';
+    echo '<div class="carre">';
+    echo '<img class="images" src="images/uploads/'.$value['article_photo'].'">';
+    echo '<div class="carredesc">';
+    echo '<h3>'.$value['article_nom'] . '</h3>';
+    echo '<p>' . $value['article_marque'] . ' </p>';
+    echo '<p>' . $value['article_prix'] . '€ </p>';
+     echo '<p>By: ' . $value['designer_prenom'] .' ' .$value['designer_nom'] .
+     ' - ' . $value['designer_nationalite'] .
+     ' - '. $value['designer_date_naissance'] . '</p>';
+    echo '<p class="type">' . $value['article_type'] . ' '. $value['article_desc'].'</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
    }
    ?>
 
